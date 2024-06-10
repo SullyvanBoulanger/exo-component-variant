@@ -65,13 +65,11 @@ export default function HomeContainer() {
         Riot games
       </h1>
       <UnorderedList>
-        {games.map((game) => {
-          return (
-            <li>
-              <GameSection {...game} />
-            </li>
-          );
-        })}
+        {games.map((game, id) => (
+          <li key={id}>
+            <GameSection {...game} />
+          </li>
+        ))}
       </UnorderedList>
     </div>
   );

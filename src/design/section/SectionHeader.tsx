@@ -1,22 +1,22 @@
 import clsx from "clsx";
 import { PropsWithChildren, ReactElement } from "react";
 
-type SubsectionTitleWithChildren = PropsWithChildren<
+type SectionHeaderWithChildren = PropsWithChildren<
   React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>
 >;
 
-interface SubsectionTitleProps extends SubsectionTitleWithChildren {
+interface SectionHeaderProps extends SectionHeaderWithChildren {
   className?: string;
 }
 
-export default function SubsectionTitle({
+export default function SectionHeader({
   children,
   className,
   ...props
-}: SubsectionTitleProps): ReactElement {
+}: SectionHeaderProps): ReactElement {
   return (
     <div
-      className={clsx(className, "text-xl font-bold text-orange-300")}
+      className={clsx(className, "relative p-4 font-bold uppercase text-2xl text-blue-100")}
       {...props}
     >
       {children}

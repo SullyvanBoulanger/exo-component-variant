@@ -1,24 +1,24 @@
 import clsx from "clsx";
 import { PropsWithChildren, ReactElement } from "react";
 
-type DivWithChildren = PropsWithChildren<
+type SectionBodyWithChildren = PropsWithChildren<
   React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>
 >;
 
-interface SectionContainerProps extends DivWithChildren {
+interface SectionBodyProps extends SectionBodyWithChildren {
   className?: string;
 }
 
-export default function Section({
+export default function SectionBody({
   children,
   className,
   ...props
-}: SectionContainerProps): ReactElement {
+}: SectionBodyProps): ReactElement {
   return (
     <div
       className={clsx(
         className,
-        "flex flex-col border-2 border-blue-800 rounded-lg overflow-hidden bg-purple-900 text-white relative"
+        "relative w-full flex flex-col gap-2 p-4 pt-0"
       )}
       {...props}
     >

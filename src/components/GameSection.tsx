@@ -1,11 +1,11 @@
 import React, { ReactElement } from "react";
 import { Game } from "../model/Game";
-import Section from "../design/Section";
-import SectionTitle from "../design/SectionTitle";
-import Subsection from "../design/SectionBody";
-import SubsectionTitle from "../design/SubsectionTitle";
-import SectionBackgroundImage from "../design/SectionBackgroundImage";
-import SectionFooter from "../design/SectionFooter";
+import Section from "../design/section/Section";
+import SectionHeader from "../design/section/SectionHeader";
+import SectionBody from "../design/section/SectionBody";
+import SubSectionTitle from "../design/section/SubSectionTitle";
+import SectionBackgroundImage from "../design/section/SectionBackgroundImage";
+import SectionFooter from "../design/section/SectionFooter";
 import Button from "../design/Button";
 import { Variant } from "../design/Variant";
 
@@ -17,16 +17,16 @@ export default function GameSection({
   return (
     <Section>
       <SectionBackgroundImage src={backgroundImageSrc} />
-      <SectionTitle>{title}</SectionTitle>
+      <SectionHeader>{title}</SectionHeader>
 
-      <Subsection>
+      <SectionBody>
         {subSections.map(({ title, body }, id) => (
           <React.Fragment key={id}>
-            <SubsectionTitle>{title}</SubsectionTitle>
+            <SubSectionTitle>{title}</SubSectionTitle>
             <p>{body}</p>
           </React.Fragment>
         ))}
-      </Subsection>
+      </SectionBody>
 
       <SectionFooter>
         <Button variant={Variant.SUCCESS}>J'aime</Button>

@@ -1,24 +1,24 @@
 import clsx from "clsx";
 import { PropsWithChildren, ReactElement } from "react";
 
-type SubsectionContainerWithChildren = PropsWithChildren<
+type SectionWithChildren = PropsWithChildren<
   React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>
 >;
 
-interface SubsectionContainerProps extends SubsectionContainerWithChildren {
+interface SectionProps extends SectionWithChildren {
   className?: string;
 }
 
-export default function Subsection({
+export default function Section({
   children,
   className,
   ...props
-}: SubsectionContainerProps): ReactElement {
+}: SectionProps): ReactElement {
   return (
     <div
       className={clsx(
         className,
-        "relative w-full flex flex-col gap-2 p-4 pt-0"
+        "flex flex-col border-2 border-blue-800 rounded-lg overflow-hidden bg-purple-900 text-white relative"
       )}
       {...props}
     >

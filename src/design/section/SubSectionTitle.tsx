@@ -1,19 +1,19 @@
 import clsx from "clsx";
 import { PropsWithChildren, ReactElement } from "react";
 
-type SectionTitleWithChildren = PropsWithChildren<
+type SubSectionTitleWithChildren = PropsWithChildren<
   React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>
 >;
 
-interface SectionTitleProps extends SectionTitleWithChildren {
+interface SubSectionTitleProps extends SubSectionTitleWithChildren {
   className?: string;
 }
 
-export default function SectionTitle({
+export default function SubSectionTitle({
   children,
   className,
   ...props
-}: SectionTitleProps): ReactElement {
+}: SubSectionTitleProps): ReactElement {
   return (
     <div
       className={clsx(className, "text-xl font-bold text-orange-300")}
